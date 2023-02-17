@@ -5,7 +5,7 @@ conn = sqlite3.connect('softtek.db')
 cursor = conn.cursor()
 
 # Crear la tabla customer_ord_lines
-cursor.execute('''CREATE TABLE customer_ord_lines
+cursor.execute('''CREATE TABLE IF NOT EXISTS customer_ord_lines
                 (order_number text, item_name text, status text)''')
 
 # Insertar datos en la tabla customer_ord_lines
@@ -24,7 +24,7 @@ ord_lines_data = [
 cursor.executemany("INSERT INTO customer_ord_lines VALUES (?,?,?)", ord_lines_data)
 
 # Crear la tabla customer_orders
-cursor.execute('''CREATE TABLE customer_orders
+cursor.execute('''CREATE TABLE IF NOT EXISTS customer_orders
                 (ord_id text, ord_dt text, qt_ordd integer)''')
 
 # Insertar datos en la tabla customer_orders
@@ -41,7 +41,7 @@ orders_data = [
 cursor.executemany("INSERT INTO customer_orders VALUES (?,?,?)", orders_data)
 
 # Crear la tabla weather
-cursor.execute('''CREATE TABLE weather
+cursor.execute('''CREATE TABLE IF NOT EXISTS weather
                 (date text, was_rainy integer)''')
 
 # Insertar datos en la tabla weather
