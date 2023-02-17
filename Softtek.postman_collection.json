@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "51cc3b47-ffbf-4b4d-960c-0eabe26160f0",
+		"name": "Softtek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4286306"
+	},
+	"item": [
+		{
+			"name": "order_status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/order_status",
+					"path": [
+						"order_status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "season",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "detecting_change",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
