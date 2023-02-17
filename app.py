@@ -2,6 +2,7 @@ from flask import Flask
 import database.database
 import services.customer_ord_line as customer_ord_line
 import services.customer_orders as customer_order
+import services.weather as weather
 from flask import make_response
 
 app = Flask(__name__)
@@ -32,5 +33,17 @@ def order_status():
 
 def season():
     result = customer_order.get_season()
+    return make_response(result, 200)
+    pass
+
+
+@app.route(
+    '/weather_change',
+    methods=['GET']
+)
+
+
+def detecting_change():
+    result = weather.detect_weather_change()
     return make_response(result, 200)
     pass
